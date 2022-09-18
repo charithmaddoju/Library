@@ -1,53 +1,57 @@
-
-class Book{
-    constructor(title,author,pages){
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
+function Book(title,author,pages,isRead){
+    this.title = title;
+    this.author = author,
+    this.pages = pages,
+    this.isRead = true;
+    this.info = function(){
+        return `${title} by ${author}, ${pages}, ${isRead}`
     }
-
 }
 
-const addbook = document.querySelector('.addbook');
-const books_container = document.querySelector('.books-container');
+let myLibrary = [];
 
-addbook.addEventListener('click', onSubmit);
+function addBookToLibrary(title,author,pages){
+    const book = new Book(title,author,pages,true);
+    myLibrary.push(book);
+}
+// const theHobbit = new Book("The Hobbit","J.R.R. Tolkien", 295, false)
 
-function onSubmit(e){
-    const div = document.createElement('div');
-    const form = document.createElement('form');
-    const title_label = document.createElement('label');
-    const title_input = document.createElement('input');
-    const author_label = document.createElement('label');
-    const author_input = document.createElement('input');
-    const pages_label = document.createElement('label');
-    const pages_input = document.createElement('input');
+// console.log(theHobbit.info());
 
+const addbook = document.querySelector('.addbook')
+const booksContainer = document.querySelector('.books-container');
+const form = document.querySelector('.form');
 
+const card = document.createElement('div');
+const cardTitle = document.createElement('div')
+const cardAuthor = document.createElement('div')
+const cardPages = document.createElement('div')
 
-    title_label.textContent = "Title";
-    author_label.textContent = "Author";
-    pages_label.textContent = "Pages";
-
-    form.append(title_label,title_input,author_label,author_input,pages_label,pages_input);
-    div.appendChild(form);
-    books_container.appendChild(div);
-
-    for(const item of form){
-        item.classList.add("inside-form")
-    }
-
-    
-
+addbook.addEventListener('click',(e) => {
+    e.preventDefault;
     form.style.display = "grid";
-    div.style.background = "lightgreen";
-    div.style.borderRadius = "0.8em";
-    div.style.borderLeft = "10px solid black"
-    div.style.width = "300px";
-    div.style.height = "300px";
 
-    
-}
+
+    const formTitle = document.querySelector('.form-title');
+    const formAuthor = document.querySelector('form-author');
+    const formPages = document.querySelector('form-pages');
+    const formSubmit = document.querySelector('.form-submit');
+    const formReset = document.querySelector('.form-reset');
+
+    formSubmit.addEventListener('click',(e) => {
+        form.style.display = "none";
+        title = formTitle;
+        author = formAuthor;
+        pages = formPages;
+
+        addBookToLibrary(title,author,pages,true)
+
+        
+        
+
+    })
+})
+
 
 
 

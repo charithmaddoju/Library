@@ -24,23 +24,23 @@ body{
 }
 
 
-.header, .content{
+#header, #content{
     background-color: steelblue;
     border: 2px solid skyblue;
 }
 
-.header{
+#header{
     display: grid;
     grid-template-columns: repeat(2,1fr);
 }
 
-.header>h2{
+#header>h2{
     justify-self: center;
     align-self: center;
     font-size: 40px;
 }
 
-.header>.btns{
+#header>.btns{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 30px;
@@ -58,23 +58,44 @@ button{
     font-weight: bold;
 }
 
-
-.form{
-    display: none;
-    position: absolute;
-    top: 45%;
-    left: 45%;
-    grid-template: 1 / 1 / 4 / 2;
+h2{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    
 }
-
-.form > input{
-    padding: 20px;
-    font-size: 19px;
+#content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
 }
 
 .books-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form{
+    width: 200px;
+    height: 200px;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.form-checkbox{
+    font-size: 40px;
+    
+}
+
+.form > input{
+    padding: 20px;
+    font-size: 19px;
 }
 
 .addbook:hover{

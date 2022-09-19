@@ -9,7 +9,7 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <div class="header">
+    <div id="header">
         <h2><em>Library</em></h2>
         <div class="btns">
             <button class="addbook">Add book</button>
@@ -17,17 +17,18 @@
             <button class="signup">Sign up</button>
         </div>
     </div>
-    <div class="content"></div>
-        <div class="books-container"></div>
-            <div                  class="form">                      <input type="text" class="form-title"
-            placeholder="title..">
-           <input class="form-author"
+    <div id="content">
+        <h2>Book Shelf</h2>
+            <div class="bookshelf"></div>
+            <div class="form">                      
+                <input type="text" class="form-title"
+                placeholder="title..">
+                <input class="form-author"
                     type="text"    placeholder="author..">
                     <input class="form-pages" type="number" placeholder="pages">
+                    <input class="form-checkbox" type="checkbox">Read
                     <input class="form-submit" type="submit">
-                    <input class="form-reset" type="reset">
             </div>
-    </div>
     </div>
 </body>
 </html>

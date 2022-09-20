@@ -37,12 +37,10 @@ addbook.addEventListener('click', function(e){
         let cardTitle = document.createElement('div');
         let cardAuthor = document.createElement('div');
         let cardPages = document.createElement('div');
-        let cardRead = document.createElement('button');
 
         cardTitle.innerText = `"${formTitle.value}"`
         cardAuthor.innerText = formAuthor.value 
         cardPages.innerText = formPages.value    
-        cardRead.innerText = "Read";
 
         card.classList.add('card');
 
@@ -52,13 +50,12 @@ addbook.addEventListener('click', function(e){
         cardAuthor.classList.add('card-author');
         cardPages.classList.add('block');
         cardPages.classList.add('card-pages');
-        cardRead.classList.add('block');
-        cardRead.classList.add('card-read');
+    
         
         card.append(cardTitle);
         card.append(cardAuthor);
         card.append(cardPages);
-        card.append(cardRead);
+   
 
         bookshelf.append(card);
         form.style.display = "none"

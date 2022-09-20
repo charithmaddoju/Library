@@ -68,14 +68,31 @@ h2{
 }
 #content{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    grid-template-areas: 
+    'h2tag'
+    'bookshelf'
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
 }
 
-.books-container{
+.bookshelf{
     display: grid;
+    grid-area: bookshelf;
     grid-template-columns: 1fr 1fr 1fr;
-}
+    gap: 30px;
 
+}
+.block{
+    display: grid;
+    background-color: peru;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 20px;
+    box-shadow: 0 0 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
 .form{
     width: 200px;
     height: 200px;
